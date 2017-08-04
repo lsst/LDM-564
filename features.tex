@@ -3,6 +3,8 @@
 This is currently not an exhaustive feature list but gives an indication at a high level of the features in each release which will be verified by the corresponding verification test campaign.
 As the test plans are written this will become a list of requirements to be tested for that release and thus begin o fill out the verification control database (currently to be in Jira).
 
+In the feature lists below the internal milestone for that feature is given in parenthesis)
+
 
 Each section here is a test milestone from \citeds{LDM-503} - the same labels are used. The timeline is in the DM schedule using the same labels and depicted in \figref{fig:schedule}
 
@@ -16,12 +18,34 @@ Each section here is a test milestone from \citeds{LDM-503} - the same labels ar
 
 \subsection{Science Platform with WISE data in PDAC \textbf{(LDM-503-1)}\label{LDM-503-1}}
 
+
 \begin{itemize}
-\item ...
+\item WISE data ingest to PDAC (DM-DAX-1)
+\item dbserv V1 API (TAP, w/ async. requests) (DM-DAX-2)
+\item imgserv V1 API (SODA) (DM-DAX-3)
+\item metaserv V1 API (SIAv2) (DM-DAX-4)
+\item Search and display WISE sources (objects) in PDAC (DM-SUIT-1)
+\item Search WISE coaded data single exposure images in PDAC (DM-SUIT-2)
+\item Time series analysis tool for WISE data (DM-SUIT-3)
+\item Multiple data traces in chart space (DM-SUIT-4)
+\item Project internal Jupyter notebook service (DM-SQRE-1)
+\item Deliver header service code (DM-NCSA-1)
+\item Header Service Integration (DM-NCSA-2)
+\item IIP control code (DM-NCSA-3)
 \end{itemize}
 
 \subsection{HSC reprocessing \textbf{(LDM-503-2)}\label{LDM-503-2}}
 
+\begin{itemize}
+\item SFM1 (DM-AP-1)
+\item Database ingest in support of HSC reprocessing i.e, large catalog ingest(DM-DAX-5)
+\item DRP-MS-INT-1 (DM-DRP-1)
+\item DRP-MS-QA-1 (DM-DRP-2)
+\item Provide regular reprocessing service for HSC data (DM-NCSA-1)
+\item Provide access to results of regular reprocessing (DM-NCSA-2)
+\item Provide database for metadata, provenance, location and demonstrate ingest at small scale (DM-NCSA-3)
+\item Search and display processed HSC data (DM-SUIT-5)
+\end{itemize}
 \subsection{Alert generation validation \textbf{(LDM-503-3)}\label{LDM-503-3}}
 
 \subsection{Aux Tel DAQ integration functionality test \textbf{(LDM-503-4)}\label{LDM-503-4}}

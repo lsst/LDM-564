@@ -1,0 +1,51 @@
+
+
+\section{Introduction}
+\subsection{Scope}
+This document covers releases of software from the Data Management Subsystem of LSST.
+It discusses the delineation between the Data Facility as an operational entity and DM producing and testing software.
+
+\section{Release management}\label{sect:relman}
+
+The release manager will be the final owner of this process the current understanding is outlined  here.
+
+\subsection{Preparation of Releases}\label{sect:relprep}
+DM develops code in github following the developer guidelines \url{https://developer.lsst.io/}.
+This includes automated testing and continuous integration. Tested releases are tagged by SQuARE
+weekly and major releases are made each Cycle (six months).
+
+There are specific packages and systems deployed together to form the high level components of DM as depicted in \figref{fig:dmsdeploy}. The orchestration of deployments on multiple machines is facilitated by the use of contains and a machine readable configurations. DM prepares docker containers and puppet configurations for deploying these systems on Kubernetes enabled cluster. These configurations are also tagged in the release.
+
+In addition specific releases with features required to support the \cite{LDM-503} test milestones will be tagged and released in advanced of each verification test. The initial feature lists for these releases are defined in \secref{sect:features}.
+
+
+
+
+\begin{figure}[htbp]
+        \begin{center}
+                \includegraphics[width=0.8\textwidth]{images/DMSDeployment}
+                \caption{DM components as deployed during Operations. Where components are
+                        deployed in multiple locations, the connections between them are labeled with
+                        the relevant communication protocols. Science payloads are shown in blue.
+            For details, refer to \citeds{LDM-148}.
+                \label{fig:dmsdeploy}}
+        \end{center}
+\end{figure}
+
+
+\subsection{Deployment of Releases}\label{sect:relprep}
+Although we provide ready to install products these will be further tested before being deployed to the productions system. Hence eat NCSA a release will be taken, installed on a test system for smoke testing. This may be seen as operational validation of the release before it is made available int he production environment.
+
+Once smoke tested the docker containers will be available in the NCSA docker repository. Using this secure internal repository operators may spin up specific containers for specific releases in the operational environment.
+
+\subsubsection{Levels of operational validation}
+Certain containers will be used to provide kernels for the JupyterLab environment. These containers could be
+deployed more quickly since they would be for use by choice in the notebook (i.e. slightly fixed version of stack but the old one is still available).
+
+Containers being made available on the dev cluster for experimentation should be available quickly hence with minimum security checking and validation.
+
+Similarly during commissioning  availability of containers on the commissioning cluster should be on the order of hours (not days). The level of smoke testing and the time to availability of a container may need to be compressed in commissioning.
+
+Containers to be used for batch processing on the other hand should be rigorously validated.
+
+

@@ -2,7 +2,7 @@
 #
 
 SRC=$(wildcard LDM-*.tex)
-tex=	$(SRC) body.tex features.tex
+tex=$(SRC) body.tex features.tex featurelist.tex
 
 OBJ=$(SRC:.tex=.pdf)
 
@@ -13,7 +13,8 @@ clean :
 	latexmk -c
 	rm *.pdf
 
-
-
 acronyms.tex :$(tex) myacronyms.tex
 	acronyms.csh  $(tex)
+
+featurelist.tex: generate_featurelist.py milestones.csv
+	python generate_featurelist.py milestones.csv featurelist.tex

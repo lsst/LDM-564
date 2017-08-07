@@ -1,18 +1,19 @@
-
-
 \section{Introduction}
 \subsection{Scope}
+
 This document covers releases of software from the Data Management Subsystem of LSST.
 It discusses the delineation between the Data Facility as an operational entity and DM producing and testing software.
 
-\section{Release management}\label{sect:relman}
+\section{Release Management}\label{sect:relman}
 
-The release manager will be the final owner of this process the current understanding is outlined  here.
+This section outlines the current understanding of the release management process.
+Complete definition is pending the appointment of the DM Release Manager.
 
 \subsection{Preparation of Releases}\label{sect:relprep}
-DM develops code in github following the developer guidelines \url{https://developer.lsst.io/}.
-This includes automated testing and continuous integration. Tested releases are tagged by SQuARE
-weekly and major releases are made each Cycle (six months).
+
+DM develops code in GitHub following it's developer guidelines and coding standards \footnote{\url{https://developer.lsst.io/}}.
+This includes automated testing and continuous integration.
+Tested releases are tagged by SQuaRE weekly and major releases are made each Cycle (six months).
 
 There are specific packages and systems deployed together to form the high level components of DM as depicted in \figref{fig:dmsdeploy}. The orchestration of deployments on multiple machines is facilitated by the use of contains and a machine readable configurations. DM prepares docker containers and puppet configurations for deploying these systems on Kubernetes enabled cluster. These configurations are also tagged in the release.
 

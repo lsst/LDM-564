@@ -1,193 +1,20 @@
 \section{Functionality in future DM releases}
+\label{sect:features}
 
-This is currently not an exhaustive feature list but gives an indication at a high level of the features in each release which will be verified by the corresponding verification test campaign.
-As the test plans are written this will become a list of requirements to be tested for that release and thus begin o fill out the verification control database (currently to be in Jira).
+This is currently not an exhaustive feature list, but rather gives an indication at a high level of the features in each release which will be verified by the corresponding verification test campaign.
+As the test plans are written this will become a list of requirements to be tested for that release and thus begin o fill out the verification control database (currently to be in JIRA).
 
-In the feature lists below the internal milestone for that feature is given in parenthesis)
+In the feature lists below, the corresponding internal milestone is given in parenthesis.
 
-
-Each section here is a test milestone from \citeds{LDM-503} - the same labels are used. The timeline is in the DM schedule using the same labels and depicted in \figref{fig:schedule}
+Each section here is a test milestone from \citeds{LDM-503} --- the same labels are used.
+The timeline is in the DM schedule using the same labels and depicted in \figref{fig:schedule}
 
 \begin{figure}[htbp]
         \begin{center}
                  \includegraphics[width=\textwidth]{images/DMMasterSchedule}
-                 \caption{DM major milestones (LDM-503-$x$) in the LSST schedule. \label{fig:schedule}}
+                 \caption{DM level 2 milestones (LDM-503-$x$) in the LSST schedule.}
+                 \label{fig:schedule}
          \end{center}
  \end{figure}
-~
 
-\subsection{Science Platform with WISE data in PDAC \textbf{(LDM-503-1)}\label{LDM-503-1}}
-
-
-\begin{itemize}
-\item WISE data ingest to PDAC (DM-DAX-1)
-\item dbserv V1 API (TAP, w/ async. requests) (DM-DAX-2)
-\item imgserv V1 API (SODA) (DM-DAX-3)
-\item metaserv V1 API (SIAv2) (DM-DAX-4)
-\item Search and display WISE sources (objects) in PDAC (DM-SUIT-1)
-\item Search WISE coaded data single exposure images in PDAC (DM-SUIT-2)
-\item Time series analysis tool for WISE data (DM-SUIT-3)
-\item Multiple data traces in chart space (DM-SUIT-4)
-\item Project internal Jupyter notebook service (DM-SQRE-1)
-\item Deliver header service code (DM-NCSA-1)
-\item Header Service Integration (DM-NCSA-2)
-\item IIP control code (DM-NCSA-3)
-\end{itemize}
-
-\subsection{HSC reprocessing \textbf{(LDM-503-2)}\label{LDM-503-2}}
-
-\begin{itemize}
-\item SFM1 (DM-AP-1)
-\item Database ingest in support of HSC reprocessing i.e, large catalog ingest(DM-DAX-5)
-\item DRP-MS-INT-1 (DM-DRP-1)
-\item DRP-MS-QA-1 (DM-DRP-2)
-\item Provide regular reprocessing service for HSC data (DM-NCSA-1)
-\item Provide access to results of regular reprocessing (DM-NCSA-2)
-\item Provide database for metadata, provenance, location and demonstrate ingest at small scale (DM-NCSA-3)
-\item Search and display processed HSC data (DM-SUIT-5)
-\end{itemize}
-\subsection{Alert generation validation \textbf{(LDM-503-3)}\label{LDM-503-3}}
-
-\begin{itemize}
-\item DIFF1		(DM-AP-2)
-\item DIFFMEAS1		(DM-AP-3)
-\item DIASource association		(DM-AP-4)
-\item DIAObject generation		(DM-AP-5)
-\item Prototype level 1 database		(DM-DAX-6)
-\item DRP-MS-COADD-1		(DM-DRP-3)
-
-\end{itemize}
-
-\subsection{Test Report: Aux Tel DAQ interface Integration Verification and Spectrograph Operations Rehearsal \textbf{(LDM-503-4b )}\label{LDM-503-4b }}
-
-\begin{itemize}
-\item Deliver IIP image client code		(DM-NCSA-29)
-\item Interface Verification: Single Visit		(LSST-1200)
-\item Butler interface to retrieve images from data backbone		(DM-DAX-7)
-\item Minimal support for the small operational schema including file metadata and provenance for every file, and record of ingest		(DM-NCSA-4)
-\item AuxTel DAQ integration functionality test		(LDM-503-4)
-\item Level 1 archiving system able to acquire pixel data from the Aux Tel DAQ, header metadata via OCS, assemble FITS image, deposit in cache		(DM-NCSA-5)
-\item Ability to transfer files originating from Tucson to NCSA and ingest files at NCSA, including metadata and provenance		(DM-NCSA-6)
-\item Capability to paint displays for Tucson and NCSA		(DM-NCSA-7)
-\item DLP-530 Base - Archive Network Functional 1 Gbps (includes Tucson - Archive)		(DM-NET-1)
-\end{itemize}
-\subsection{Alert distribution validation \textbf{(LDM-503-5)}\label{LDM-503-5}}
-
-\begin{itemize}
-\item Transformed EFD schema		(DM-DAX-11)
-\item EFD Transformation Service		(DM-NCSA-30)
-\item Transformed EFD database		(DM-NCSA-31)
-\item EFD ETL Under DM Control		(LSST-1220)
-\item ALERTDIST1		(DM-AP-6)
-\item Test instance of feeds to LSST mini broker in online (live stream) and offline (replaying from files) modes		(DM-NCSA-8)
-\item Test instance of alert distribution hosting service and L1 database in Development \& Integration Enclave		(DM-NCSA-9)
-\end{itemize}
-
-\subsection{ComCam Interface Verificaton\textbf{(LDM-503-6)}\label{LDM-503-6}}
-\begin{itemize}
-\item ISR1		(DM-AP-7)
-\item DRP-MS-CPP-2		(DM-DRP-3)
-\item DRP-MS-CPP-6		(DM-DRP-4)
-\item Sustained archiving service that is OCS commandable		(DM-NCSA-10)
-\item Verified acquisition of raw and crosstalk-corrected exposures at raft scale, incl. correct metadata		(DM-NCSA-11)
-\end{itemize}
-
-\subsection{Camera data processing \textbf{(LDM-503-7)}\label{LDM-503-7}}
-\begin{itemize}
-\item DRP-MS-CPP-3		(DM-DRP-5)
-\item LSSTCam data display and visualization		(DM-SUIT-6)
-\item Mapping between SUIT systems \& NCSA auth system		(DM-SUIT-7)
-\item Integrate SUIT portal with workspace		(DM-SUIT-8)
-\end{itemize}
-
-\subsection{Spectrograph data acquisition \textbf{(LDM-503-8)}\label{LDM-503-8}}
-
-\begin{itemize}
-\item DRP-MS-CPP-1		(DM-DRP-6)
-\item DRP-MS-CPP-4		(DM-DRP-7)
-\item DRP-MS-CPP-5		(DM-DRP-8)
-\item DRP-MS-CPP-9		(DM-DRP-9)
-\item EFD ETL Service		(DM-NCSA-12)
-\item Header Writing Service for Spectrograph use case		(DM-NCSA-13)
-\item Spectrograph Archiving Service		(DM-NCSA-13)
-\item Data Backbone endpoints in Chile for ingestion and access, distribution over WAN, ingest at NCSA into custodial file store		(DM-NCSA-14)
-\item Batch Processing Service for offline spectrograph data processing		(DM-NCSA-15)
-\item DLP-561 Mountain - Base Network Functional 2 x 100 Gbps		(DM-NET-2)
-\item T\&SC-2600-1250 Initial Network Ready (Summit) (NB actually a T\&S milestone?!)		(DM-NET-3)
-\item Base LAN installed		(DM-NET-4)
-\item Spectral data display		(DM-SUIT-9)
-\end{itemize}
-
-\subsection{DAQ validation \textbf{(LDM-503-10)}\label{LDM-503-10}}
-\begin{itemize}
-\item ISR2		(DM-AP-8)
-\item Jointcal at a functional (but not necessarily algorithmically complete) level.		(DM-AP-9)
-\item DRP-MS-CPP-8		(DM-DRP-10)
-\item DRP-MS-OBJCHAR-8		(DM-DRP-11)
-\item DRP-MS-IMCHAR-6		(DM-DRP-12)
-\item DRP-MS-IMCHAR-2		(DM-DRP-13)
-\item DRP-MS-OBJCHAR-9		(DM-DRP-14)
-\item DRP-MS-COADD-3		(DM-DRP-15)
-\item DRP-MS-IMCHAR-1		(DM-DRP-16)
-\item DRP-MS-IMCHAR-4		(DM-DRP-17)
-\item DRP-MS-DET-1		(DM-DRP-18)
-\item DRP-MS-QA-2		(DM-DRP-19)
-\item DRP-MS-COADD-2		(DM-DRP-37)
-\item ISR processing on ComCam-scale data.		(DM-NCSA-16)
-\item QA on WCS, PSF, etc returned to Observatory using JupyterLab		(DM-NCSA-17)
-\item Validated disaster repsonse recovery for data and calibration products		(DM-NCSA-18)
-\item 8x7 incident response system		(DM-NCSA-19)
-\item Supertask-based system capable of efficient processing across a full focal plane.		(DM-DAX-8)
-\item Provenance system, details TBD.		(DM-DAX-9)
-\item Commissioning notebooks running on the commissioning cluster		(DM-SQRE-2)
-\end{itemize}
-
-\subsection{DM ComCam operations readiness \textbf{(LDM-503-11)}\label{LDM-503-11}}
-\begin{itemize}
-\item SFM2		(DM-AP-10)
-\item ComCam Archiving Service		(DM-NCSA-20)
-\item L1 Offline Processing Service, Raft Scale, ComCam		(DM-NCSA-21)
-\item Information in consolidated database available to QA portal		(DM-NCSA-22)
-\item SUIT deployment procedure		(DM-SUIT-10)
-\item DLP-531 Base - Archive Network Functional 100 Gbps		(DM-NET-5)
-\item DRP-MS-IMCHAR-5		(DM-DRP-21)
-\item DRP-MS-COADD-4		(DM-DRP-22)
-\item DRP-MS-CPP-10		(DM-DRP-23)
-\item DRP-MS-DET-3		(DM-DRP-26)
-\item Middleware support for multifit		(DM-DAX-10)
-\item ComCam data search, display, and visualization		(DM-SUIT-11)
-\item Alert subscription (beta)		(DM-SUIT-13)
-\item "All-sky" visualization		(DM-SUIT-14)
-\item DIFF2		(DM-AP-11)
-\end{itemize}
-\subsection{Ops rehearsal DRP (ComCam data) \textbf{(LDM-503-13)}\label{LDM-503-13}}
-\begin{itemize}
-\item DRP-MS-OBJCHAR-1		(DM-DRP-25)
-\item DIFF3		(DM-AP-12)
-\item DIFFMEAS2		(DM-AP-13)
-\item ALERTDIST2		(DM-AP-14)
-\item DRP-MS-OBJCHAR-6		(DM-DRP-32)
-\item DRP-MS-OBJCHAR-5		(DM-DRP-34)
-\item DRP-MS-DET-4		(DM-DRP-35)
-\item Operational processes for preparing for \& producing a data release defined and tested		(DM-NCSA-23)
-\item Alert subscription		(DM-SUIT-15)
-\item Commissioning DAC		(DM-SUIT-16)
-\end{itemize}
-\subsection{DM Software for Science Verification \textbf{(LDM-503-14)}\label{LDM-503-14}}
-\begin{itemize}
-\item
-\end{itemize}
-\subsection{Verification tests in advance of Full Operations rehearsal  \textbf{(LDM-503-15)}\label{LDM-503-15}}
-\begin{itemize}
-\item DRP-MS-COADD-6		(DM-DRP-33)
-
-\item INTEGRATION1:  Integration done to the level that the alert distribution system can be fully integrated.  This excludes integration of the precovery and forced photometry pipeline and MOPS since the alert distribution system does not depend on them directly.		(DM-AP-15)
-\item Alert search \& display		(DM-SUIT-17)
-\item Notebook service ready for verification \& validation		(DM-SQRE-4)
-\end{itemize}
-
-\subsection{Verification tests for full DRP \textbf{(LDM-503-17)}\label{LDM-503-17}}
-
-\begin{itemize}
-\item Demonstrate full delivery of Data Facility ConOps		(DM-NCSA-26)
-\end{itemize}
+\input{featurelist}

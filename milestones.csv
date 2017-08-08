@@ -4,9 +4,9 @@ LSST-1160,2,,2017-08-03,F17,DM-NCSA-27,,Header Service Integration,,,,,,,,"AP, D
 DM-NCSA-28,3,NCSA,2017-08-10,F17,,,IIP control code,,,,,,,,"Sometimes, I am shifting milestones later to better align with the overall plan (e.g., move visualization out of DAQ testing). We can still stick with the original dates, though."
 LSST-1190,2,,2017-08-10,F17,"LSST-1160, DM-NCSA-28",,Control Interfaces Verification: Single Visit,,,,,,,,"We need to be able to describe what each milestone actually means. I think the ""DRP Milestones"" sheet is approximately the right level of detail for now. Some of the other milestones are too vague – what is ""alert subscription v2"" and how does it differ from ""alert subscription v1""? Not a requirement to provide expanded descriptions in this sheet but you should be ready and able to provide these definitions when asked by reviewers."
 DM-DAX-1,3,DAX,2017-11-30,F17,,DM-10740 (epic),WISE data ingest to PDAC,,,,,,,,"I have split the AP DIFF2 milestone into DIFF2 and DIFF3, and scheduled DIFF2 early. Simon, please check & confirm."
-DM-DAX-2,3,DAX,2017-11-30,F17,,DM-10772 (epic),"dbserv V1 API (TAP, w/ async. requests)",,,,,,,,"Not regarding ""improve XXX"" as a milestone unless it has a concrete deliverable."
-DM-DAX-3,3,DAX,2017-11-30,F17,,DM-2107 (epic),imgserv V1 API (SODA),,,,,,,,Added a MOPS milestone.
-DM-DAX-4,3,DAX,2017-11-30,F17,,DM-4863 (epic),metaserv V1 API (SIAv2),,,,,,,,"I can't see LSST-1160, 1190,etc in PMCS. Am assuming they are L2 milestones."
+DM-DAX-2,3,DAX,2017-11-30,F17,,DM-10772 (epic),"Query service suporting IVOA TAP protocol, w/ support for asynchronous queries",,,,,,,,"Not regarding ""improve XXX"" as a milestone unless it has a concrete deliverable."
+DM-DAX-3,3,DAX,2017-11-30,F17,,DM-2107 (epic),Image cutout service supporting IVOA SODA protocol,,,,,,,,Added a MOPS milestone.
+DM-DAX-4,3,DAX,2017-11-30,F17,,DM-4863 (epic),Metadata service suporting IVOA SIAv2 protocol,,,,,,,,"I can't see LSST-1160, 1190,etc in PMCS. Am assuming they are L2 milestones."
 DM-SUIT-1,3,SUIT,2017-11-30,F17,DM-DAX-1,DM-8493,Search and display WISE sources (objects) in PDAC,,,,,,,,
 DM-SUIT-2,3,SUIT,2017-11-30,F17,"DM-DAX-2, DM-DAX-3",DM-8493,"Search WISE coaded data single exposure images in PDAC (the images are from IRSA at IPAC, not NCSA)",,,,,,,,
 DM-SUIT-3,3,SUIT,2017-11-30,F17,,DM-8352,Time series analysis tool for WISE data,,,,,,,,
@@ -14,7 +14,7 @@ DM-SUIT-4,3,SUIT,2017-11-30,F17,,DM-8400,Multiple data traces in chart space,,,,
 DM-SQRE-1,3,SQuaRE,2017-11-30,F17,,DM-10744 (epic),Project internal Jupyter notebook service,,,,,,,,
 LDM-503-1,2,,2017-11-30,F17,"DM-DAX-1, DM-DAX-2, DM-DAX-3, DM-DAX-4, DM-SUIT-1, DM-SUIT-2, DM-SUIT-3, DM-SUIT-4, DM-SQRE-1",,Science Platform with WISE data in PDAC,,,,,,,,
 DM-AP-1,3,AP,2017-11-30,F17,,DM-10773 (epic),Basic single frame measurement pipeline.,SFM1,,,,,,,
-DM-DAX-5,3,DAX,2017-11-30,F17,,DM-11238 (epic),"Database ingest in support of HSC reprocessing (ie, large catalog ingest)",,,,,,,,
+DM-DAX-5,3,DAX,2017-11-30,F17,,DM-11238 (epic),"Database ingest in support of HSC reprocessing (automatable, large catalog ingest)",,,,,,,,
 DM-DRP-1,3,DRP,2017-11-30,F17,,DM-8299 (epic),HSC merger complete: all functionality deployed for the most recent HSC data release processing is now available within the LSST stack.,DRP-MS-INT-1,,,,,,,
 DM-DRP-2,3,DRP,2017-11-30,F17,"DM-DAX-5, DM-NCSA-3",DM-10571 (epic),Basic visualization and quality assessment tools operational on HSC-scale data volumes.,DRP-MS-QA-1,,,,,,,
 DM-NCSA-1,3,NCSA,2017-11-30,F17,DM-DRP-1,DM-10702,Provide regular reprocessing service for HSC data,,,,,,,,
@@ -26,7 +26,7 @@ DM-AP-2,3,AP,2017-11-30,F17,,DM-10773 (epic),Alard & Lupton-style image differen
 DM-AP-3,3,AP,2017-11-30,F17,,DM-10773 (epic),Point source & dipole measurement on difference images.,DIFFMEAS1,,,,,,,
 DM-AP-4,3,AP,2017-11-30,F17,,DM-10768 (epic),DIASource association.,,,,,,,,
 DM-AP-5,3,AP,2017-11-30,F17,,DM-10768 (epic),DIAObject generation.,,,,,,,,
-DM-DAX-6,3,DAX,2017-11-30,F17,,DM-2036 (epic),Prototype level 1 database,,,,,,,,
+DM-DAX-6,3,DAX,2017-11-30,F17,,DM-2036 (epic),Prototype L1 / Alert Production database (relaxed scale requirements),,,,,,,,
 DM-DRP-3,3,DRP,2017-12-01,S18,,DM-8289 (epic),PSF-homogenized coadd construction.,DRP-MS-COADD-1,,,,,,,
 LDM-503-3,2,,2017-11-30,S18,"DM-AP-1, DM-AP-2, DM-AP-3, DM-AP-4, DM-AP-5, DM-DAX-6",,Alert Generation Validation,,,,,,,,
 DM-NCSA-29,3,NCSA,2017-12-07,S18,DM-NCSA-28,,Deliver IIP image client code,,,,,,,,
@@ -39,13 +39,14 @@ DM-NCSA-6,3,NCSA,2018-02-12,S18,DM-NET-1,NCSA-LDFSS-FY18a,"Ability to transfer f
 DM-NCSA-7,3,NCSA,2018-02-12,S18,,NCSA-DCITS-FY18a,Capability to paint displays for Tucson and NCSA,,,,,,,,
 DM-NET-1,3,Networks,2018-02-12,S18,,,DLP-530 Base - Archive Network Functional 1 Gbps (includes Tucson - Archive),,,,,,,,
 LDM-503-4b,2,,2018-02-12,S18,"DM-NCSA-5, DM-NCSA-6, DM-NCSA-7, LDM-503-4",,Aux Tel DAQ Interface Integration Verification and Spectrograph Operations Rehearsal,,,,,,,,
-DM-DAX-11,3,DAX,2018-04-06,S18,,DAX-016,Transformed EFD schema,,,,,,,,
+DM-DAX-11,3,DAX,2018-04-06,S18,,DAX-016,Schema design for transformed EFD,,,,,,,,
 DM-NCSA-30,3,NCSA,2018-04-06,S18,DM-DAX-11,NCSA-LDFS-FY18b,EFD Transformation Service,,,,,,,,
 DM-NCSA-31,3,NCSA,2018-04-06,S18,DM-DAX-11,NCSA-DCITS-FY18b,Transformed EFD database,,,,,,,,
 LSST-1220,2,,2018-04-06,S18,"LSST-1190, DM-NCSA-30, DM-NCSA-31",,EFD ETL Under DM Control,,,,,,,,
 DM-AP-6,3,AP,2018-05-31,S18,"DM-NCSA-8, DM-NCSA-9",AP-73,Alert format defined & queue system available.,ALERTDIST1,,,,,,,
 DM-NCSA-8,3,NCSA,2018-05-31,S18,,"NCSA-LDFS-19b, NCSA-ICTF-18b",Test instance of feeds to LSST mini broker in online (live stream) and offline (replaying from files) modes,,,,,,,,
 DM-NCSA-9,3,NCSA,2018-05-31,S18,DM-DAX-6,"NCSA-LDFS-18b, NCSA-DCITS-18b, NCSA-ICTF-18b",Test instance of alert distribution hosting service and L1 database in Development & Integration Enclave,,,,,,,,
+DM-SUIT-18,3,SUIT,2018-05-31,S18,DM-DAX-4,IPAC 002,Search and browse the metaData,,,,,,,,
 LDM-503-5,2,,2018-05-31,S18,"DM-AP-6, DM-NCSA-8, DM-NCSA-9, LDM-503-3",,Alert Distribution Validation,,,,,,,,
 DM-AP-7,3,AP,2018-06-30,F18,DM-DRP-4,AP-98,Basic instrument signature removal (ISR) capability.,ISR1,,,,,,,
 DM-DRP-38,3,DRP,2018-03-01,F18,,DRP-PP-CPP-01,Camera package supporting the Commissioning Camera.,DRP-MS-CPP-2,,,,,,,
@@ -89,7 +90,7 @@ DM-NCSA-16,3,NCSA,2018-11-30,F18,DM-DRP-1,NCSA-LDFS-19a,Perform ISR processing o
 DM-NCSA-17,3,NCSA,2018-11-30,F18,"QA algorithms?,Jupyter deployment?",NCSA-DCITS-19a,"QA on WCS, PSF, etc returned to Observatory using JupyterLab",,,,,,,,
 DM-NCSA-18,3,NCSA,2018-11-30,F18,,NCSA-DCITS-18a,Validated disaster repsonse recovery for data and calibration products,,,,,,,,
 DM-NCSA-19,3,NCSA,2018-11-30,F18,,NCSA-DCITS-FY19a,8x7 incident response system,,,,,,,,
-DM-DAX-8,3,DAX,2018-11-30,F18,,DAX-056,Supertask-based system capable of efficient processing across a full focal plane.,,,,,,,,
+DM-DAX-8,3,DAX,2018-11-30,F18,,DAX-056,Supertask-based system capable of efficient processing across a full focal plane,,,,,,,,
 DM-DAX-9,3,DAX,2018-11-30,F18,,DAX-026,"Provenance system, details TBD.",,,,,,,,
 DM-SQRE-2,3,SQuaRE,2018-11-30,F18,"DM-SQRE-1,DM-NCSA-12",SQ-DS-J-2,Commissioning notebooks running on the commissioning cluster,,,,,,,,
 LDM-503-9,2,,2018-11-30,F18,"DM-AP-8, DM-AP-9, DM-DRP-10, DM-DRP-11, DM-DRP-12, DM-DRP-13, DM-DRP-14, DM-DRP-15, DM-DRP-16, DM-DRP-17, DM-DRP-18, DM-DRP-19, DM-NCSA-16, DM-NCSA-17, DM-NCSA-18, DM-NCSA-19, DM-DAX-8, DM-DAX-9, DM-SQRE-2, LDM-503-7, DM-DRP-37",,Verification Tests in Advance of Pre-Ops Rehearsal for Commissioning,,,,,,,,
@@ -110,7 +111,7 @@ DM-DAX-10,3,DAX,2019-10-31,F19,,DAX-054,Middleware support for multifit,,,,,,,,
 DM-SUIT-11,3,SUIT,2019-10-31,F19,DM-NCSA-20,"IPAC 015, 016, 017, 019","ComCam data search, display, and visualization",,,,,,,,
 DM-SUIT-12,3,SUIT,2019-10-31,F19,DM-SUIT-8,"IPAC 018, 026",,,,,,,,,
 DM-SUIT-13,3,SUIT,2019-10-31,F19,DM-AP-6,"IPAC 020, 021",Alert subscription (beta),,,,,,,,
-DM-SUIT-14,3,SUIT,2019-10-31,F19,Needs input data [DM-SST?],"IPAC 001, 023","""All-sky"" visualization",,,,,,,,
+DM-SUIT-14,3,SUIT,2019-10-31,F19,Needs input data [DM-SST?],"IPAC 001, 023","""All-sky"" visualization, including the single focal plane image visualization",,,,,,,,
 DM-AP-11,3,AP,2019-10-31,F19,DM-AP-2,AP-155,Difference imaging includes noise decorrelation and correction for differential chromatic refraction.,DIFF2,,,,,,,
 LDM-503-11,2,,2019-10-31,F19,"LDM-503-9, LDM-503-11a, DM-DRP-21, DM-DRP-22, DM-DRP-23, DM-DRP-26, DM-DAX-10, DM-SUIT-11, DM-SUIT-12, DM-SUIT-13, DM-SUIT-14, DM-AP-11, LDM-503-5, LDM-503-8",,Verification Tests in Advance of Pre-Ops Rehearsal for Commissioning #2,,,,,,,,
 DM-DRP-20,3,DRP,2019-08-21,F19,DM-DRP-4,DRP-PP-CPP-04,Refined set of LSST calibration products.,DRP-MS-CPP-7,,,,,,,

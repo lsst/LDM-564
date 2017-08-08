@@ -16,7 +16,7 @@ def parse_milestones(ms_input):
             if ms['Milestone ID'].startswith('LDM'):
                 prereqs[ms['Milestone ID']] = [ms.strip()
                                                for ms in ms['Prerequisites'].split(',')
-                                               if not ms.startswith("LDM")]
+                                               if not ms.strip().startswith("LDM")]
     return descriptions, prereqs
 
 if __name__ == "__main__":

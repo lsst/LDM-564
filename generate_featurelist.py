@@ -14,9 +14,9 @@ def parse_milestones(ms_input):
         for ms in reader:
             descriptions[ms['Milestone ID']] = sanitize_tex(ms['Description'])
             if ms['Milestone ID'].startswith('LDM'):
-                prereqs[ms['Milestone ID']] = [ms.strip()
-                                               for ms in ms['Prerequisites'].split(',')
-                                               if not ms.strip().startswith("LDM")]
+                prereqs[ms['Milestone ID']] = [mstone.strip()
+                                               for mstone in ms['Prerequisites'].split(',')
+                                               if not mstone.strip().startswith("LDM")]
     return descriptions, prereqs
 
 if __name__ == "__main__":

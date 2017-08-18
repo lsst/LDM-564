@@ -17,4 +17,4 @@ acronyms.tex :$(tex) myacronyms.tex
 	acronyms.csh  $(tex)
 
 featurelist.tex: generate_featurelist.py milestones.csv
-	python generate_featurelist.py milestones.csv featurelist.tex
+	python3 generate_featurelist.py milestones.csv featurelist.tex

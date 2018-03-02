@@ -16,5 +16,5 @@ clean :
 acronyms.tex :$(tex) myacronyms.tex
 	acronyms.csh  $(tex)
 
-featurelist.tex: generate_featurelist.py milestones.csv
-	python3 generate_featurelist.py milestones.csv featurelist.tex
+featurelist.tex: milestones/generate_featurelist.py milestones/pmcs.csv milestones/gdocs.csv
+	python3 milestones/generate_featurelist.py milestones/pmcs.csv milestones/gdocs.csv $@

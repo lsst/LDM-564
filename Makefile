@@ -1,6 +1,8 @@
 #
 #
 
+export TEXMFHOME = lsst-texmf/texmf
+
 SRC=$(wildcard LDM-*.tex)
 tex=$(SRC) body.tex features.tex featurelist.tex
 

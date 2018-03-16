@@ -7,9 +7,11 @@ python:
   - '3.6'
 before_install:
   - "pip install 'lander>=0.1.0,<0.2'"
+  - "pip install xlrd"
 script:
-  # Run Python script in Travis's Python environment
+  # Run Python scripts in Travis's Python environment
   - "make featurelist.tex"
+  - "make gantt.tex"
   # Compile PDF using containerized lsst-texmf
   - "docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make acronyms.tex'"
   - "docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make all'"

@@ -1,0 +1,22 @@
+sudo: true
+dist: trusty
+services:
+  - docker
+language: python
+python:
+  - '3.6'
+before_install:
+  - "pip install 'lander>=0.1.0,<0.2'"
+script:
+  # Run Python script in Travis's Python environment
+  - "make featurelist.tex"
+  # Compile PDF using containerized lsst-texmf
+  - "docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make acronyms.tex'"
+  - "docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make all'"
+  # Deploy website. See https://github.com/lsst-sqre/lander for CLI options
+  - "lander --pdf LDM-564.pdf --upload --lsstdoc LDM-564.tex --env=travis --ltd-product ldm-564"
+env:
+  global:
+    # Add LSST the Docs credentials
+    - secure: "GhkIrIbw4/OVXWUkTRC1RLx5OcGt+EwQQgftU2JKFUiSq0E1Hcphx/zzdMRpNakJ0N8eAizhGrd3Dz77aViDdiqjDom87P6I226GKZcyFcGR2eMGDM4bMuxaNIOgoMqThpojxkJilfT8jjup94ZXN2eXKnmyBRuuq6jX/5l8rwUB8aJr5+rqbvLlW1rQDB2vhUPnX23O1YadCx8kmGeAzFSjm5LYLB6pNKLZtFNOjXZi+gmx8yBYBcbqDQG7Z9lmfrh2zjTIB4YILp6or1R2x6alzETPU8X7Rbz6zm20hrK5yC/IxLrQXm4EedcssFxc3IrhR7iBogDp+f2GiQKF5Ne8HvklY4T1v90B8m5ilIpxA7DqChxq7Lmm+3XHd2xSgR/RMMttTtUPl0N3iUCiI4SNn3QseUmBWIt+s5PPj6uLbV4DjHds6x1VCo81bYSbpANEtF0rVAVLO88O3cmvBpvBLYB1HyyZWvcM9pzjyMVBo2gSP41BZFH2ItAK5T9ttSGOPjVU9Ynh9Haof4/PrP0gtd9b+w3MUwt/20tSP/xfANqeiqoFJHoOLIEzbrGxcGpD5l+7e/ZpQBjVBf1qwCEi6PTDrdvH9M8Ouvfw0LDHbbXxnHxCjiQYfVYvgsxqoyYn7KNEOOn9T9mJq8c9npiyDhAt+AO4CXiQj3geNZM="
+    - secure: "XwjUSDUQ/yjkfn9V2mv4vGOS+3pIpAFFNmJEhkN1f7OlqGSKgWPDSn91PdzEetJU0hYpdKLEP4t0HdcuB+aDwtd2pKQhfzwpNM80ZuTeTuGL21FOns1mxr9URgUp2bltvdmMCsfg3hWV4PHhaYyVlNI2vOH1gjscWpTIUdd5tQSkFbX2U924xRLPrS2pYscrzjbCU261gcVOgiCakme4QuzifBUdGfTjnaV77luaLeacPMgTiPNU0SGYUXt58cCr28VTrEfo2aVtMi2c/CKCl4Af2MlYO2KGwzIBXnPpDY59oGf0DzvpMk7jvMrZSkNZNfyyd/PjD89njC/q0l0ZlPJiQjWCURn6djeKiHJ4LkXweuxiTWGa65z81qQoRh+I6l6sctUFXY4agO5aHLsQGUnBzTiKAwOBDwiMj/dHhKG/KNMJC54+EBOjb2M5q3VqUdP/BCFLOE9TxCSCnqpZrTa9QH9yceQYFy/BPCnNQAiAq9SdTrYl8Tu9wZLQy7CAqHo4B75umRUeg8pdff6Yd4v9ritR01/O8qeIv8hV0mZPL/o5W7e3UANLL5eeSfuAUBKMD7xP8nq10YczRMjeWmjraJFK6NVT676swUmqHtDhaH0eQ6UFFiWzzkSn5UR3nphzFV0KDbPVweI5OOx/hkE+n/3gvZWQeVAyiRx1WDw="

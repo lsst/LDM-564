@@ -4,7 +4,7 @@
 export TEXMFHOME = lsst-texmf/texmf
 
 SRC=$(wildcard LDM-*.tex)
-tex=$(SRC) body.tex features.tex featurelist.tex
+tex=$(SRC) body.tex features.tex featurelist.tex gantt.tex
 
 OBJ=$(SRC:.tex=.pdf)
 
@@ -20,3 +20,6 @@ acronyms.tex :$(tex) myacronyms.tex
 
 featurelist.tex: milestones/milestones.py
 	python milestones/milestones.py ldm564 --releases $@
+
+gantt.tex: milestones/milestones.py
+	python milestones/milestones.py ldm564 --gantt $@

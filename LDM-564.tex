@@ -1,14 +1,17 @@
-\documentclass[DM]{lsstdoc}
+\documentclass[DM,toc,lsstdraft]{lsstdoc}
+\usepackage{milestones/texmf/pgfgantt}
+\input{meta}
 
 \setDocChangeRecord{%
 \addtohist{1.0}{2017-08-18}{Initial version. Approved in \jira{RFC-373}.} {W.~O'Mullane}
+\addtohist{1.1}{2018-03-16}{Synchronize milestones with PMCS.} {J.D.~Swinbank}
 }
 
 \title[DM Releases]{Data Management Releases for Verification/Integration}
 
-\author   {William O'Mullane, Frossie Economou, Tim Jenness, Andrew Loftus}
+\author   {William O'Mullane, Frossie Economou, Tim Jenness, Andrew Loftus, John D. Swinbank}
 \setDocRef      {LDM-564} % the reference code
-\setDocDate     {2017-08-18}              % the date of the issue
+\setDocDate     {\vcsDate}              % the date of the issue
 \setDocUpstreamLocation{\url{https://github.com/lsst/LDM-564}}
 %
 % a short abstract

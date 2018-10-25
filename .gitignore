@@ -3,6 +3,7 @@ featurelist.tex
 gantt.tex
 meta.tex
 LDM-564.pdf
+venv
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

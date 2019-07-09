@@ -13,7 +13,7 @@ tex=$(SRC) body.tex features.tex featurelist.tex gantt.tex
 
 OBJ=$(SRC:.tex=.pdf)
 
-all: $(tex) meta.tex
+all: $(tex) meta.tex acronyms.tex
 	latexmk -bibtex -xelatex -f $(SRC)
 
 clean :
@@ -21,8 +21,8 @@ clean :
 	rm *.pdf
 	rm -rf $(VENVDIR)
 
-acronyms.tex :$(tex) myacronyms.tex
-	acronyms.csh  $(tex)
+acronyms.tex: $(tex) myacronyms.tex
+	$(TEXMFHOME)/../bin/generateAcronyms.py  $(tex)
 
 venv: milestones/requirements.txt
 	python3 -m venv $(VENVDIR)

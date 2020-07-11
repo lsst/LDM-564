@@ -34,13 +34,13 @@ venv: milestones/requirements.txt
 featurelist.tex: milestones/milestones.py venv
 	( \
 		source $(VENVDIR)/bin/activate; \
-		python3 milestones/milestones.py ldm564 --releases $@ ; \
+		python3 milestones/milestones.py ldm564; \
 	)
 
 gantt.tex: milestones/milestones.py venv
 	( \
 		source $(VENVDIR)/bin/activate; \
-		python3 milestones/milestones.py ldm564 --gantt $@ ; \
+		python3 milestones/milestones.py ldm564; \
 	)
 
 .FORCE:

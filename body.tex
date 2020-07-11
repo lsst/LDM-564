@@ -1,28 +1,24 @@
 \section{Introduction}
 \subsection{Scope}
 
-This document covers releases of software from the Data Management Subsystem of LSST for verification/integration tests.
-It discusses the delineation between the Data Facility as an operational entity and DM producing and testing software.
-It does not cover the normal releases to the community of the software stack - see \url{https://developer.lsst.io/} for that.
+This document describes the major DM functionality which is expected to be available at major\footnote{ ``level 2''} milestones during the construction project, as described in \citeds{LDM-503}.
+In doing so, it is intended to provide guidance to the system integration and verification teams.
 
 \section{Release Management}\label{sect:relman}
 
-This section outlines the current understanding of the release management process.
-Complete definition is pending the appointment of the DM Release Manager.
+All software releases from the DM Subsystem are carried out following the Release Management Policy, \citeds{LDM-672}.
+Technical details of the application of this policy are described in \citeds{DMTN-106}.
 
 \subsection{Preparation of Releases}\label{sect:relprep}
 
 DM develops code in GitHub following its developer guidelines and coding standards \footnote{\url{https://developer.lsst.io/}}.
 This includes automated testing and continuous integration.
-Tested releases are tagged by SQuaRE weekly and major releases are made each cycle (six months).
+Tested releases are tagged by SQuaRE weekly and major releases are made periodically.
 
 There are specific packages and systems deployed together to form the high level components of DM as depicted in \figref{fig:dmsdeploy}.
 The orchestration of deployments on multiple machines is facilitated by the use of containers and machine readable configurations.
 DM prepares Docker containers and Puppet configurations for deploying these systems on Kubernetes enabled clusters.
 These artifacts are tagged as part of the release.
-
-In addition, specific releases with features required to support the \citeds{LDM-503} test milestones will be tagged and released in advanced of each verification test.
-The preliminary feature lists for these releases are defined in \secref{sect:features}.
 
 \begin{figure}[htbp]
         \begin{center}
@@ -36,11 +32,8 @@ The preliminary feature lists for these releases are defined in \secref{sect:fea
 \subsection{Deployment of Releases}\label{sect:reldep}
 
 Although DM will provide ready-to-install products, these will be further tested before being deployed.
-Hence, releases will initially be installed on test systems at NCSA and will undergo smoke testing before they are made available in the production environment.
+Hence, releases will initially be installed on test systems at NCSA and will undergo testing before they are made available in the production environment.
 This will serve as an operational validation of the release.
-
-Once smoke tested, the Docker containers will be made available in the NCSA Docker repository.
-Using this secure internal repository, operators may deploy containers for specific releases in the operational environment.
 
 \subsubsection{Levels of Operational Validation}
 

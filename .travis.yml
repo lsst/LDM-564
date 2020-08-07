@@ -10,7 +10,7 @@ before_install:
   - "pip install xlrd"
   - "pip install matplotlib"
   - "pip install numpy"
-  - "pip install pandas"
+  - "pip install pyyaml"
 script:
   # Run Python scripts in Travis's Python environment
   - "make featurelist.tex"

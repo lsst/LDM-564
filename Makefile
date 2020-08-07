@@ -18,7 +18,9 @@ all: $(tex) meta.tex acronyms.tex
 
 clean :
 	latexmk -c
-	rm *.pdf
+	rm -f *.pdf
+	rm -f featurelist.tex
+	rm -f gantt.tex
 	rm -rf $(VENVDIR)
 
 acronyms.tex: $(tex) myacronyms.tex
@@ -31,16 +33,16 @@ venv: milestones/requirements.txt
 		pip install -r milestones/requirements.txt; \
 	)
 
-featurelist.tex: milestones/milestones.py venv
+featurelist.tex: bin/generate_release_list.py venv
 	( \
 		source $(VENVDIR)/bin/activate; \
-		python3 milestones/milestones.py ldm564; \
+		PYTHONPATH=milestones python3 bin/generate_release_list.py \
 	)
 
 gantt.tex: milestones/milestones.py venv
 	( \
 		source $(VENVDIR)/bin/activate; \
-		python3 milestones/milestones.py ldm564; \
+		PYTHONPATH=milestones python3 milestones/milestones.py gantt --embedded --output $@ \
 	)
 
 .FORCE:

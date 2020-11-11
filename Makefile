@@ -14,7 +14,10 @@ tex=$(SRC) body.tex features.tex featurelist.tex gantt.tex
 OBJ=$(SRC:.tex=.pdf)
 
 all: $(tex) meta.tex acronyms.tex
-	latexmk -bibtex -xelatex -f $(SRC)
+	xelatex $(SRC)
+	bibtex  LDM-564 
+	xelatex $(SRC)
+	xelatex $(SRC)
 
 clean :
 	latexmk -c

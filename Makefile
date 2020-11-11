@@ -13,6 +13,9 @@ tex=$(SRC) body.tex features.tex featurelist.tex gantt.tex
 
 OBJ=$(SRC:.tex=.pdf)
 
+
+generated: featurelist.tex  gantt.tex meta.tex
+
 all: $(tex) meta.tex acronyms.tex
 	xelatex $(SRC)
 	bibtex  LDM-564 

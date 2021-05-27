@@ -42,13 +42,14 @@ venv: milestones/requirements.txt
 featurelist.tex: bin/generate_release_list.py venv
 	( \
 		source $(VENVDIR)/bin/activate; \
-		PYTHONPATH=milestones python3 bin/generate_release_list.py \
+		PYTHONPATH=milestones python3 bin/generate_release_list.py forecast\
 	)
 
 gantt.tex: milestones/milestones.py venv
 	( \
 		source $(VENVDIR)/bin/activate; \
 		PYTHONPATH=milestones python3 milestones/milestones.py gantt --embedded --output $@ \
+		PYTHONPATH=milestones python3 milestones/milestones.py --forecast gantt --embedded --output $@ \
 	)
 
 .FORCE:

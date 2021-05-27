@@ -1,11 +1,12 @@
 from io import StringIO
+import sys
 
 from milestones import (escape_latex, write_output, get_latest_pmcs_path,
                         get_local_data_path, load_milestones)
 
 def generate_releases(milestones):
     output = StringIO()
-    for ms in sorted([ms for ms in milestones if ms.code.startswith("LDM-503")],
+    for ms in sorted([ms for ms in milestones if ms.code.startswith("LDM")],
                      key=lambda x: (x.due, x.code)):
         output.write(f"\\subsection{{{escape_latex(ms.name)}: {escape_latex(ms.code)}}}\n")
         output.write("\\textit{")
@@ -40,5 +41,6 @@ def generate_releases(milestones):
     return output.getvalue()
 
 if __name__ == "__main__":
-    milestones = load_milestones(get_latest_pmcs_path(), get_local_data_path())
+    forecast = sys.argv[1]=="forecast"
+    milestones = load_milestones(get_latest_pmcs_path(), get_local_data_path(), forecast)
     write_output("featurelist.tex", generate_releases(milestones))

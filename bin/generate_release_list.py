@@ -42,5 +42,5 @@ def generate_releases(milestones):
 
 if __name__ == "__main__":
     forecast = sys.argv[1]=="forecast"
-    milestones = load_milestones(get_latest_pmcs_path(), get_local_data_path(), )
+    milestones = load_milestones(get_latest_pmcs_path(), get_local_data_path())
     write_output("featurelist.tex", generate_releases(milestones))

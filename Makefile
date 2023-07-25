@@ -29,7 +29,7 @@ clean :
 	rm -f gantt.tex
 	rm -rf $(VENVDIR)
 
-acronyms.tex: $(tex) myacronyms.tex
+acronyms.tex: $(tex) myacronyms.txt
 	$(TEXMFHOME)/../bin/generateAcronyms.py  $(tex)
 
 venv: milestones/requirements.txt
